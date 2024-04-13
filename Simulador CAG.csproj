@@ -74,6 +74,7 @@
     <Compile Include="FanCoil.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="ModbusClient.cs" />
+    <Compile Include="ModbusProtocol.cs" />
     <Compile Include="ModbusServer.cs" />
     <Compile Include="Chiller.cs" />
     <Compile Include="Program.cs" />
@@ -86,6 +87,7 @@
       <DependentUpon>SimuladorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StoreLogData.cs" />
+    <Compile Include="TcpHandler.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -131,24 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SimuladorMPS.ico" />
-    <None Include="Resources\Carrossel.png" />
-    <None Include="Resources\BaseSeparador.png" />
-    <None Include="Resources\Broca.png" />
-    <None Include="Resources\BrocaAzul.png" />
-    <Content Include="Resources\Elevador.png" />
-    <None Include="Resources\Estacao34.png" />
-    <Content Include="Resources\Expulsador.png" />
-    <Content Include="Resources\FundoGeral.png" />
     <None Include="Resources\Info Image.png" />
-    <None Include="Resources\Furadeira.png" />
-    <Content Include="Resources\Magazine.png" />
-    <None Include="Resources\PrendePeca.png" />
-    <None Include="Resources\Rotativo2.png" />
-    <Content Include="Resources\RotativoBraco.png" />
-    <None Include="Resources\TestePeca.png" />
-    <None Include="Resources\SeparadorVentosa.png" />
-    <None Include="Resources\RotativoVentosa.png" />
-    <Content Include="Resources\Ventosa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

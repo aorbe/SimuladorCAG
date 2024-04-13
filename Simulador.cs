@@ -15,12 +15,10 @@ namespace Simulador_CAG
     class Simulador
     {
         // Estações 1 e 2
-        FanCoil fc1, fc2;
-        Chiller ch1, ch2;
+        private FanCoil fc1, fc2;
+        private Chiller ch1, ch2;
 
         Timer timer;
-
-        bool recalc = true;
 
         Random random = new Random();
 
@@ -35,6 +33,7 @@ namespace Simulador_CAG
             if (_simulador == null)
             {
                 easyModbusTCPServer = new Simulador_CAG.ModbusServer();
+                easyModbusTCPServer.LogFileFilename = "log.txt";
                 easyModbusTCPServer.Listen();
                 _simulador = new Simulador();
                 easyModbusTCPServer.HoldingRegistersChanged += 
@@ -166,6 +165,7 @@ namespace Simulador_CAG
             if (ch1.state) status += 0x04;
             if (ch2.state) status += 0x08;
             easyModbusTCPServer.changeHoldingRegisters(STS_REGISTER, (short)status);
+            local[STS_REGISTER] = status;
 
             if (ProcessChanged != null)
                 ProcessChanged(local);
@@ -183,7 +183,6 @@ namespace Simulador_CAG
                     if (x > 19)
                         return;
                     local[register + x] = easyModbusTCPServer.holdingRegisters[register + x];
-                    recalc = true;
                 }
             }
         }

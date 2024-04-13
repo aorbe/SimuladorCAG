@@ -717,52 +717,6 @@ namespace Simulador_CAG
         private bool receiveActive = false;
         private byte[] readBuffer = new byte[256];
         private int bytesToRead = 0;
-        private int actualPositionToRead = 0;
-        DateTime dateTimeLastRead;
-/*
-        private void DataReceivedHandler(object sender,
-                        SerialDataReceivedEventArgs e)
-        {
-            long ticksWait = TimeSpan.TicksPerMillisecond * 2000;
-            SerialPort sp = (SerialPort)sender;
-            
-            if (bytesToRead == 0 || sp.BytesToRead == 0)
-            {
-                actualPositionToRead = 0;
-                sp.DiscardInBuffer();
-                dataReceived = false;
-                receiveActive = false;
-                return;
-            }
-
-            if (actualPositionToRead == 0 && !dataReceived)
-                readBuffer = new byte[256];
-
-            //if ((DateTime.Now.Ticks - dateTimeLastRead.Ticks) > ticksWait)
-            //{
-            //    readBuffer = new byte[256];
-            //    actualPositionToRead = 0;
-            //}
-            int numberOfBytesInBuffer = sp.BytesToRead;
-            sp.Read(readBuffer, actualPositionToRead, ((numberOfBytesInBuffer + actualPositionToRead) > readBuffer.Length) ? 0 : numberOfBytesInBuffer);
-            actualPositionToRead = actualPositionToRead + numberOfBytesInBuffer;
-            //sp.DiscardInBuffer();
-            //if (DetectValidModbusFrame(readBuffer, (actualPositionToRead < readBuffer.Length) ? actualPositionToRead : readBuffer.Length) | bytesToRead <= actualPositionToRead)
-            if (actualPositionToRead >= bytesToRead)
-            {
-
-                    dataReceived = true;
-                    bytesToRead = 0;
-                    actualPositionToRead = 0;
-                    if (debug) StoreLogData.Instance.Store("Received Serial-Data: " + BitConverter.ToString(readBuffer), System.DateTime.Now);
-
-            }
-
-
-            //dateTimeLastRead = DateTime.Now;
-        }
- */       
-
         
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
