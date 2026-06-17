@@ -3,7 +3,7 @@
 O **Simulador CAG (Central de Água Gelada)** é uma ferramenta educacional desenvolvida para auxiliar no ensino de Sistemas de Supervisão e Redes Industriais. Ele emula o comportamento de um processo industrial de refrigeração, permitindo que alunos desenvolvam e testem soluções de IHM (Interface Homem-Máquina) e SCADA sem a necessidade de equipamentos físicos.
 
 ## 📋 Sobre o Projeto
-Este software foi desenvolvido como parte de um relatório técnico no curso de Tecnologia em Automação Industrial do SENAI. O objetivo principal é disponibilizar um canal de comunicação via **Modbus/TCP** com dados simulados, oferecendo uma alternativa leve e de fácil acesso para atividades práticas fora da sala de aula.
+Este software foi desenvolvido para auxiliar alunos do curso de Tecnologia em Automação Industrial do SENAI. O objetivo principal é disponibilizar um canal de comunicação via **Modbus/TCP** com dados simulados, oferecendo uma alternativa leve e de fácil acesso para atividades práticas fora da sala de aula.
 
 ### Principais Características
 * **Simulação de CAG:** Modela chillers, bombas, fan-coils e setpoints de temperatura.
